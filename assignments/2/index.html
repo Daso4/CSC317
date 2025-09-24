@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> 
+        <title> David Soto - Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Welcome to my portfolio! </h1>
+            <nav>
+                <a href="#bio">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contacts">Contact Me</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="wrap">
+
+                <section id="bio"> 
+        
+                    <h2>About me</h2>
+                    <p style="text-align:center;">
+                        <img src="images/avatar.jpg" alt="Avatar initials D S" width="180" height="180">
+                    </p>
+
+                    <p>
+                        Hello everyone, my name is David S. I am a computer science major. I have always had an interest in technology, even more
+                        so because at this point the entire world revolves around it. I got interested in computer science specifically 
+                        during highschool. When I saw they had a CS class available, I decided to take it and my interest grew even more. I am
+                        now attempting to complete a degree in this field and expand my career options. Since technology is ever evolving there
+                        will always be fun new ways to interact with it. My main goal currently is just to graduate and get my degree, secondary goal
+                        would be to get a job in the field. I like to learn new things, I am currently attemtping to learn the guitar although I am no
+                        good at it. I also like to play video games, which is where most of my creativty is inspired from. I also used to draw, although
+                        that hobby has been retired for a while now. 
+                    </p>
+                </section>
+            </div>
+
+            <section id="skills">
+                <h2 style="text-align: center; text-decoration: underline;">My Skills </h2>
+                <div class="grid">
+                    <article class="card">
+                        <h3> Programming Languages </h3>
+                        <p class="decor">
+                            <span class="row">Java</span>
+                            <span class="row">C</span>
+                            <span class="row">Python</span>
+                            <span class="row">HTML</span>
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Tools & Technologies</h3>
+                        <p class="decor">
+                            <span class="row">PyGame</span>
+                            <span class="row">GitHub</span>
+                            <span class="row">IntellIJ</span>
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Design</h3>
+                        <p class="decor">
+                            <span class="row">Adobe</span>
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2 style="text-align: center; text-decoration: underline;">My Works</h2>
+
+                <div class="grid">
+                    <article class="card">
+                        <h3> Tic-Tac-Toe </h3>
+                        <p> I made this project back in highschool, it was just a tic-tac-toe game I made using Python. Unfortunately all
+                            the code I had for it is gone so only the memories live on.
+                        </p>
+                        <p class="tags"> Python </p>
+                        
+                    </article>
+
+                    <article class="card">
+                        <h3> Pacman </h3>
+                        <p> Once upon a time I also made an unfinished Pacman game with Python, if I remember correctly I used Pygame to
+                            make it. 
+                        </p>
+                        <p class="tags"> Python </p>
+
+                    </article>
+
+                    <article class="card">
+                        <h3> Various Small Java Projects </h3>
+                        <p> I have done some very simple java projects, mostly asking the user for input and doing different things
+                            based on the input received.
+                        </p>
+                        <p class="tags"> Java </p>
+
+                    </article>
+                </div>
+            </section>
+
+            <div class="wrap">
+                <section id="contacts">
+                    <h2 style="text-align: center; text-decoration: underline;">My Info</h2>
+                    <p> I'm always happy to meet and talk to new people. Feel free to contact me for any reason whether social or anything else!
+                        Look forward to talk to you! 
+                    </p>
+
+                    <form onsubmit="
+                        location.href =
+                        'mailto:dsoto6@sfsu.edu'
+                        + '?subject=' + encodeURIComponent('Portfolio Contact from ' + (this.name.value || 'Someone'))
+                        + '&body=' + encodeURIComponent(
+                        'Name: ' + (this.name.value || '') + '\n'
+                        + 'Email: ' + (this.email.value || '') + '\n\n'
+                    + (this.message.value || '')
+                );
+            return false;">
+
+                        <p>
+                            <label for="name">Name</label><br>
+                            <input id="name" name="name" type="text" required
+                                placeholder="Your Name">
+                        </p>
+
+                        <p>
+                            <label for="email">Email</label><br>
+                            <input id="email" name="email" type="email" required
+                                placeholder="JohnDoe@gmail.com">
+                        </p>
+
+                        <p>
+                            <label for="message">Message</label><br>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Hello, I would like to ask you about... "></textarea>
+                        </p>
+
+                        <p><button type="submit">Send</button></p>
+
+                    </form>
+                </section>
+
+                <div class="links">
+                    <a href="https://github.com/Daso4/CSC317" target="_blank" rel="noopener"> GitHub</a>
+                    <a href="https://www.linkedin.com/in/david-soto-450589290/" target="_blank" rel="noopener"> LinkedIn</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            David Soto © 2025
+        </footer>
+
+    </body>
+
+</html>
