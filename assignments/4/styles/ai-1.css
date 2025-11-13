@@ -1,0 +1,266 @@
+/* =========================================================
+   AI‑1: Halloween Theme (Black + Orange)
+   Instructions covered: dark background, orange accents,
+   Shlop-style headings, centered layout (except nav top-left),
+   hover "startled jump" animations, round theme-switcher buttons,
+   each section in a big rounded/circled box.
+   ========================================================= */
+
+/* ----------------------
+   Design Tokens (CSS vars)
+   ---------------------- */
+:root{
+  --bg: #0b0b0b;
+  --fg: #f3f3f3;
+  --muted: #cfcfcf;
+  --accent: #ff7a00;   /* Halloween orange */
+  --accent-ink: #1a1a1a;
+  --border: #ff7a00;
+  --glow: rgba(255, 122, 0, 0.45);
+  --card: #121212;
+  --shadow: rgba(0,0,0,0.45);
+}
+
+/* ----------------------
+   Global reset / base
+   ---------------------- */
+*{ box-sizing:border-box; }
+
+html, body{
+  margin:0;
+  padding:0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height:1.6;
+  text-align: center; /* center most content by default */
+  /* keep content from hiding under fixed nav */
+  padding-top: 64px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* ----------------------
+   Headings & Typography
+   ---------------------- */
+h1, h2, h3 {
+  color: var(--accent);
+  font-family: "Arial Black", "Helvetica", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.5px;
+  margin: 0.2em 0 0.6em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+p, li{ color: var(--fg); }
+
+a{ color: var(--accent); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+/* ----------------------
+   Layout constraints
+   ---------------------- */
+main{
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+section{
+  margin: 32px auto;
+  padding: 24px;
+  background: var(--card);
+  border: 3px solid var(--border);
+  border-radius: 32px;           /* "big circled box" look */
+  box-shadow: 0 0 0 6px rgba(255,122,0,0.08), 0 12px 30px var(--shadow);
+  position: relative;
+}
+
+/* Optional soft radial highlight inside each section */
+section::after{
+  content:"";
+  position:absolute; inset:0;
+  border-radius: inherit;
+  background: radial-gradient(120% 120% at 50% 0%,
+             rgba(255,122,0,0.08), transparent 60%);
+  pointer-events:none;
+}
+
+/* ----------------------
+   Navigation (top-left)
+   ---------------------- */
+nav{
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 10px;
+  z-index: 50;
+  text-align: left; /* do not center nav */
+}
+
+nav a{
+  display: inline-block;
+  padding: 8px 12px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 9999px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px var(--shadow);
+  transform: translateY(0);
+  transition: transform 180ms ease, box-shadow 200ms ease, filter 200ms ease;
+  will-change: transform;
+  border: 2px solid transparent;
+}
+
+nav a:hover{
+  transform: translateY(-6px); /* startled jump */
+  box-shadow: 0 10px 20px var(--shadow), 0 0 12px var(--glow);
+}
+
+nav a:focus-visible{
+  outline: none;
+  border-color: var(--fg);
+  box-shadow: 0 0 0 3px var(--fg), 0 0 12px var(--glow);
+}
+
+/* ----------------------
+   Theme Switcher
+   ---------------------- */
+.theme-switcher{
+  margin: 24px auto 8px;
+}
+
+.theme-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.theme-button{
+  appearance: none;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--fg);
+  padding: 10px 14px;
+  border-radius: 6px;                /* square corners */
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 180ms ease, background-color 200ms ease, box-shadow 200ms ease, color 200ms ease;
+  will-change: transform;
+}
+
+
+.theme-button:hover{
+  transform: translateY(-6px);       /* startled jump */
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 10px 20px var(--shadow), 0 0 12px var(--glow);
+}
+
+.theme-button.active{
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.theme-button:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px var(--fg), 0 0 12px var(--glow);
+}
+
+/* ----------------------
+   Images / Avatar
+   ---------------------- */
+#home img{
+  display:block;
+  margin: 0.5rem auto 0.75rem;
+  border-radius: 16px;
+  border: 3px solid var(--accent);
+  box-shadow: 0 10px 24px var(--shadow), 0 0 0 6px rgba(255,122,0,0.08);
+}
+
+/* ----------------------
+   Buttons (generic utility)
+   ---------------------- */
+button, .btn{
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 180ms ease, box-shadow 200ms ease;
+}
+
+button:hover, .btn:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px var(--shadow);
+}
+
+/* ----------------------
+   Lists inside sections
+   ---------------------- */
+section ul{
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem auto 0;
+  display: grid;
+  gap: 8px;
+}
+
+section li{
+  background: rgba(255,122,0,0.06);
+  border: 1px solid rgba(255,122,0,0.35);
+  border-radius: 12px;
+  padding: 8px 10px;
+  text-align: left; /* internal list content left-aligned for readability */
+  color: var(--muted);
+}
+
+/* ----------------------
+   Footer
+   ---------------------- */
+footer{
+  margin: 36px 0 24px;
+}
+
+footer a{
+  color: var(--accent);
+  font-weight: 700;
+}
+
+footer a:hover{
+  text-decoration: underline;
+}
+
+/* ----------------------
+   Responsive tweaks
+   ---------------------- */
+@media (min-width: 720px){
+  section{ padding: 32px; border-width: 4px; border-radius: 36px; }
+  #home img{ width: 240px; }
+}
+
+@media (min-width: 1024px){
+  main{ width: min(1000px, 88%); }
+  section{ margin: 36px auto; }
+}

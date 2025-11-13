@@ -1,0 +1,112 @@
+/* AI-2 Fall Theme*/
+
+
+/* General page styling */
+body {
+  background-color: #000;           /* pure black background */
+  color: #b5651d;                   /* warm brown text */
+  font-family: "Georgia", serif;    /* elegant serif font */
+  text-align: center;               /* center all text */
+  margin: 0;
+  padding: 0;
+  height: 100%;                     /* ensures full black coverage */
+}
+
+/* Section styling */
+section {
+  margin: 3rem auto;
+  width: 80%;
+  text-align: center;
+  background-color: #000;           /* each section has black background */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 123, 0, 0.2); /* soft orange glow */
+}
+
+/* Section Titles */
+section h2 {
+  background-color: #ff7b00;  /* bright orange box */
+  color: #3b0a00;             /* deep brown-red text */
+  font-size: 3em;             /* 3x text size */
+  font-weight: bold;          /* bold titles */
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* Subheadings (h3) */
+h3 {
+  color: #a93226;             /* deep fall red */
+  font-size: 2.8rem;          /* large subheading */
+  font-weight: bold;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* Paragraphs */
+p {
+  color: #b5651d;             /* same warm brown as list items */
+  font-size: 2.4em;           /* same size as list items */
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Lists */
+ul {
+  list-style-type: none;       /* remove bullet points */
+  padding: 0;
+  display: flex;               /* make items appear side-by-side */
+  flex-wrap: wrap;             /* wrap if too many items */
+  justify-content: center;     /* center horizontally */
+  gap: 2rem;                   /* space between columns */
+  text-align: center;
+}
+
+ul li {
+  margin: 0.8rem 0;
+  position: relative;
+  color: #b5651d;
+  font-size: 2.4em;            /* same size as paragraphs */
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  text-align: center;
+  border: none;                /* no underline */
+}
+
+/* Nested lists (like under projects) */
+ul ul {
+  margin-top: 0.5rem;
+  display: block;
+  text-align: center;
+}
+
+ul ul li {
+  display: block;
+  border: none;
+  font-size: 1.2em;
+  color: #d35400;             /* lighter orange for nested items */
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: #b5651d;             /* brown default link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff0000;             /* red when hovered */
+}
+
+/* Section separation */
+section:not(:last-of-type) {
+  border-bottom: 2px solid #a93226;
+  padding-bottom: 2rem;
+}
