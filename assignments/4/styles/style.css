@@ -128,7 +128,7 @@ form input, form textarea, form button {
   gap: 10px 12px;
 }
 
-/* Theme Switcher sytle */
+/* ==== Theme Switcher sytle ==== */
 .theme-switcher {
 	display: flex;
 	background: var(--secondary-color);
