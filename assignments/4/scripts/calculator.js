@@ -37,7 +37,7 @@
         if (key>='0' && key <= '9'){
             numLogic(key);
         }
-        if (key === '*' || key === '/' || key === '-' || key === '+'){
+        if (key === '*' || key === '/' || key === '-' || key === '+' || key === 'x' || key === 'X' || key === 'Enter') {
             const shown = displayElement.textContent;
             const currentValue = parseFloat(shown);
             let symbol = key;

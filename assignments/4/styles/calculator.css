@@ -1,19 +1,33 @@
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: slategrey;
+    height: 100vh;
+    margin: 0;
 }
 
+#backlink {
+    display: block;
+    
+    text-align: center;
+    color: lightblue;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#backlink:hover {
+    text-decoration: underline;
+}
 
 #calculator{
     display: flex;
     flex-direction: column;
     gap: 8px;
     align-items: center;
-    width: min(92vw, 480px);
+    width: min(92vw, 450px);
     max-width: 700px;
     margin: 0 auto;
 
