@@ -74,6 +74,12 @@ form input, form textarea, form button {
   transition: background 120ms, border-color 120ms, color 120ms;
 }
 
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .card h3 { 
     margin: 0 0 8px; 
 }
@@ -105,7 +111,13 @@ form input, form textarea, form button {
   margin-bottom: 12px;
 }
 
-.decor { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.decor { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 8px; 
+  margin-top: 6px; 
+}
+
 .row {
   display: inline-block;
   padding: 6px 10px;
@@ -141,12 +153,15 @@ form input, form textarea, form button {
 	margin: 1px;
 	overflow: hidden;
 }
+
 .theme-switcher h3 {
 	color: white;
 }
+
 .theme-buttons {
 	display: flex;
 }
+
 .theme-button {
 	background: var(--background-color);
 	border-radius: 2px;
@@ -154,6 +169,7 @@ form input, form textarea, form button {
 	margin-left: 2px;
 	margin-right: 2px;
 }
+
 .active {
 	background: var(--primary-color);
 }
