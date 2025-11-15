@@ -144,8 +144,19 @@ function opLogic(symbol, currentValue) {
   }
 
   if (symbol === '=') {
+
     if (firstOp !== null && operator !== null && !waitSecondOp) {
       const result = math(firstOp, operator, currentValue);
+
+      if (result === null) {
+        displayElement.textContent = "Error";
+        firstOp = null;
+        operator = null;
+        waitSecondOp = false;
+        hasTyped = false;
+        return;
+      }
+
       displayElement.textContent = String(result);
       firstOp = result;
       operator = null;
@@ -153,12 +164,21 @@ function opLogic(symbol, currentValue) {
     }
     return;
   }
+
   if (firstOp === null) {
     firstOp = currentValue;
     operator = symbol;
     waitSecondOp = true;
   } else if (!waitSecondOp) {
     const result = math(firstOp, operator, currentValue);
+    if (result === null) {
+      displayElement.textContent = "Error";
+      firstOp = null;
+      operator = null;
+      waitSecondOp = false;
+      hasTyped = false;
+      return; // stop
+    }
     displayElement.textContent = String(result);
     firstOp = result;
     operator = symbol;
@@ -179,7 +199,7 @@ function math(a, op, b) {
   } if (op === '/') {
     if (b === 0) {
       displayElement.textContent = 'Error';
-      return 0;
+      return null;
     }
     return a / b;
   }
